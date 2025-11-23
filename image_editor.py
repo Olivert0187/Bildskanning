@@ -6,8 +6,9 @@ A simple MVP for converting and editing negative DSLR scans to positive images.
 
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
-from PIL import Image, ImageTk, ImageOps
+from PIL import Image, ImageTk, ImageOps, ImageEnhance
 import os
+
 
 
 class ImageEditor:
@@ -191,7 +192,6 @@ class ImageEditor:
             img = ImageOps.invert(img)
         
         # Apply brightness adjustment
-        from PIL import ImageEnhance
         if self.brightness_value != 1.0:
             enhancer = ImageEnhance.Brightness(img)
             img = enhancer.enhance(self.brightness_value)

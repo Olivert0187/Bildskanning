@@ -4,7 +4,7 @@ Test script for the image editor functionality
 """
 import os
 import sys
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageEnhance
 
 def test_image_inversion():
     """Test that negative to positive conversion works"""
@@ -34,8 +34,6 @@ def test_brightness_adjustment():
     """Test brightness adjustment"""
     print("Testing brightness adjustment...")
     
-    from PIL import ImageEnhance
-    
     if not os.path.exists('test_positive.jpg'):
         print("ERROR: test_positive.jpg not found!")
         return False
@@ -58,8 +56,6 @@ def test_brightness_adjustment():
 def test_contrast_adjustment():
     """Test contrast adjustment"""
     print("Testing contrast adjustment...")
-    
-    from PIL import ImageEnhance
     
     if not os.path.exists('test_positive.jpg'):
         print("ERROR: test_positive.jpg not found!")
