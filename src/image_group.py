@@ -4,7 +4,6 @@ Image Group Module - Manages groups of images for batch processing.
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import List, Dict, Optional, Callable
-from PIL import Image
 
 
 @dataclass

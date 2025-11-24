@@ -143,8 +143,12 @@ Examples:
         elif args.command == "contrast":
             results = processor.adjust_contrast_group("batch", args.factor, args.output)
         
-        print(f"Successfully processed {len(results)} images")
-        print(f"Output saved to: {args.output}")
+        if len(results) > 0:
+            print(f"Successfully processed {len(results)} images")
+            print(f"Output saved to: {args.output}")
+        else:
+            print("No images were processed successfully")
+            return 1
         return 0
         
     except Exception as e:
